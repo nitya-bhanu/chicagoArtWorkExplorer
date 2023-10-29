@@ -1,0 +1,36 @@
+img{
+    height: 300px;
+}
+.my-card{
+    height:450px;
+    background-color: rgb(234, 117, 117);
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   border-radius: 8px;
+   box-shadow: 0 0 12px rgba(179, 56, 56, 0.6);
+   .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .func-buttons{
+        padding: 5px;
+    }
+    h5{
+        padding-top: px;
+    }
+   }
+   transition: all 0.1s ease-in-out 0.2s;
+}
+.my-card:hover {
+    background-color: rgb(240, 93, 93);
+    transform: scale(1.05); /* add scale transformation */
+  }
+
+.fb-share-button a{
+    color: black;
+    text-decoration: none;
+}

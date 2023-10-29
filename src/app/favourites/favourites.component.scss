@@ -1,0 +1,23 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h3 {
+    padding: 15px;
+}
+
+h3 {
+    color: rgb(197, 50, 50);
+    text-align: center;
+}
+
+.card-title:hover {
+    color: #150F96;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.favourite-container {
+    gap: 24px;
+}

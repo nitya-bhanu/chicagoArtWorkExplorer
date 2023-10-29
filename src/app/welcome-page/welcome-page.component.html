@@ -1,0 +1,19 @@
+<div class="container">
+    <h4>Welcome to</h4>
+    <h2>Art Institute of Chicago</h2>
+    <p class="intro">Home to a collection of art that spans centuries and the globe, the Art Institute of Chicago is located in the
+      heart
+      of the city—and is one of Tripadvisor’s “Best of the Best” US attractions of 2023.</p>
+    
+      <div class="search-n-cart d-flex align-items-center justify-content-between">
+        <form [formGroup]="searchForm">
+          <input type="text" placeholder="Search name here" formControlName="fieldName">
+        </form>
+        <button type="button" class="btn btn-danger" [routerLink]="['/favourites']">View Favourites</button>
+      </div>
+    <div class="d-flex flex-wrap justify-content-between">
+    <app-card *ngFor="let item of artWork" [FetchedItems]="item"></app-card>
+  </div>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" (page)="handPageChange($event)">
+    </mat-paginator>
+  </div>

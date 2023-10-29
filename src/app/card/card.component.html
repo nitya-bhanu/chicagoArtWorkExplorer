@@ -1,0 +1,28 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/alt-text -->
+<div class="my-card" style="width: 18rem;">
+  <div class="card-title d-flex justify-content-center">
+    <img class="card-img-top" src='https://www.artic.edu/iiif/2/{{FetchedItem?.image_id}}/full/843,/0/default.jpg'
+      *ngIf="!isArtworkDataLoading">
+    <div class="spinner-border mt-3" role="status" *ngIf="isArtworkDataLoading">
+      <span class="sr-only"></span>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{FetchedItem?.title}}</h5>
+    <div class="func-buttons d-flex justify-content-between align-items-center" *ngIf="type === 'card'">
+      <a [routerLink]="['/display',FetchedItem?.id]" class="btn btn-dark">View Artwork</a>
+      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout=""
+        data-size="">
+        <a target="{{FetchedItem.api_link}}"
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+          class="fb-xfbml-parse-ignore"><i class="bi bi-facebook"></i>Share</a>
+      </div>
+      <i class='bi-heart' id='{{FetchedItem?.id}}-hrt-icon' (click)="fillHeart(FetchedItem?.id)"></i>
+    </div>
+    <div class="func-buttons d-flex justify-content-between align-items-center" *ngIf="type === 'favourites'">
+      <a class="btn btn-dark" (click)="removeFromFav(FetchedItems?.id)">Remove From Favourites</a>
+    </div>
+  </div>
+</div>
