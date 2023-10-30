@@ -14,7 +14,7 @@ export class WelcomePageComponent {
   artWork: any = [];
   searchForm: FormGroup;
   currPageIndex=1;
-  currPageSize=10;
+  currPageSize=12;
 
   subscriptions: Subscription[] = [];
   constructor(private getService: GetDataService,private formBuilder: FormBuilder) {}

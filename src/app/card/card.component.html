@@ -10,9 +10,9 @@
     </div>
   </div>
   <div class="card-body">
-    <h5 class="card-title">{{FetchedItem?.title}}</h5>
+    <h5 class="card-title">{{ FetchedItem?.title?.length > 40 ? FetchedItem?.title?.substr(0, 40) + "..." : FetchedItem?.title }}</h5>
     <div class="func-buttons d-flex justify-content-between align-items-center" *ngIf="type === 'card'">
-      <a [routerLink]="['/display',FetchedItem?.id]" class="btn btn-dark">View Artwork</a>
+      <a [routerLink]="['/display',FetchedItem?.id]" class="btn btn-custom">View Artwork</a>
       <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout=""
         data-size="">
         <a target="{{FetchedItem.api_link}}"
@@ -22,7 +22,7 @@
       <i class='bi-heart' id='{{FetchedItem?.id}}-hrt-icon' (click)="fillHeart(FetchedItem?.id)"></i>
     </div>
     <div class="func-buttons d-flex justify-content-between align-items-center" *ngIf="type === 'favourites'">
-      <a class="btn btn-dark" (click)="removeFromFav(FetchedItems?.id)">Remove From Favourites</a>
+      <a class="btn btn-custom" (click)="removeFromFav(FetchedItems?.id)">Remove From Favourites</a>
     </div>
   </div>
 </div>

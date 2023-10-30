@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Meta Data</h1>
+<div mat-dialog-content>
+  <p>Artwork Title: {{data.metaInfo.title}}</p>
+  <p>Artwork Type: {{data.metaInfo.artwork_type_title}}</p>
+  <p>Subject: {{data.metaInfo.subject_titles}}</p>
+  <p>Copyright Notice: {{data.metaInfo.copyright_notice}} </p>
+  <p>Description:</p>
+  <p [innerHTML]="data.metaInfo.description"></p>
+  <p>Fiscal Year: {{data.metaInfo.fiscal_year}}</p>
+  <p>Provenance: {{data.metaInfo.provenance_text}}</p>
+</div>

@@ -16,7 +16,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
     AppComponent,
     CardComponent,
     WelcomePageComponent,
-    FavouritesComponent
+    FavouritesComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,9 @@
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .display-full-info{
-    background-color:rgb(235, 246, 246);
+    background-color:rgb(253, 203, 203);
+    min-height: 100vh;
+    box-shadow: 0 0 12px rgba(179, 56, 56, 0.6);
 }
 img{
     width: 23vw;
@@ -10,7 +12,7 @@ img{
 h2{
     color: rgb(138, 39, 39);
 }
-h4{
+h4,p.artist-name{
     color: gray;
 }
 p.art-des{

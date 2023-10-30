@@ -39,5 +39,6 @@ export class FavouritesComponent {
   removeFromFav(id: string) {
     this.getFavService.removeFavourites(id);
     this.favIds = this.getFavService.favouritesIdRecords;
+    location.reload();
   }
 }

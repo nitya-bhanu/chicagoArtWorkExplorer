@@ -40,3 +40,22 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.btn-custom{
+  background-color: rgb(234 104 104) !important;
+  color:white;
+}
+.btn-custom:hover{
+  background-color: rgb(225, 88, 88) !important;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(255, 226, 226);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(251, 173, 173);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 141, 141);
+}

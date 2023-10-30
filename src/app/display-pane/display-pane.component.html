@@ -6,10 +6,10 @@
     <div class="img-des p-4 justify-content-center">
         <h2>{{FetchedItem.title}}</h2>
         <h5>{{FetchedItem.place_of_origin}}</h5>
-        
+
         <p class="art-des" [innerHTML]="FetchedItem.description"></p>
         <button type="button" class="btn btn-danger" id='addFav' (click)="addToFavourites()">Add to Favourites</button>
         <div class="d-flex p-2"></div>
-        <button type="button" class="btn btn-info">View Meta Data</button>        
+        <button type="button" class="btn btn-info" (click)="openDialog()">View Meta Data</button>        
     </div>
 </div>

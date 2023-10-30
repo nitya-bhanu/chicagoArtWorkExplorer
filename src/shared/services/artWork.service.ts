@@ -18,6 +18,8 @@ export class GetDataService {
   }
 
   getSearchedArtworks(searchString: string, pageNo: number, limit: number): Observable<GetArtworksByQueryResponse> {
+    if(searchString==='')
+    return this.http.get<GetArtworksByQueryResponse>(`${this.apiUrl}?page=${pageNo}&limit=${limit}`);
     return this.http.get<GetArtworksByQueryResponse>(`${this.apiUrl}/search?q=${searchString}?page=${pageNo}&limit=${limit}`);
   }
 
