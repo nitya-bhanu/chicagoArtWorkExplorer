@@ -16,6 +16,14 @@ export interface DialogData {
 })
 export class DisplayPaneComponent {
   FetchedItem: any;
+
+  /**
+   * 
+   * @param activatedRoute fetches the property of activated route
+   * @param getServices gets the fetched APIs Info for the artworks
+   * @param favdataServices gets the API result to call the favourite srtworkd
+   * @param dialog used to open dialog which in turn enables user to view meta data.
+   */  
   constructor(activatedRoute: ActivatedRoute, private getServices: GetDataService, private favdataServices:FavDataServicesService,public dialog:MatDialog) {
     activatedRoute.params.subscribe(e => {
       console.log(e['displayId']);
@@ -33,6 +41,8 @@ export class DisplayPaneComponent {
       })
     })
   }
+
+  //adds the data to be saved in the fav 
   addToFavourites() {
     this.favdataServices.addFavourites(this.FetchedItem.id);
     document.getElementById('addFav').innerText='Added';

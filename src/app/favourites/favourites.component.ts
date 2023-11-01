@@ -15,6 +15,7 @@ export class FavouritesComponent {
   FetchedItems: any = [];
   favIds: Array<string>;
 
+  //subscribing to the favourtite service 
   subscriptions: Subscription[] = [];
   constructor(private getService: GetDataService, private getFavService: FavDataServicesService) {
     this.favIds = this.getFavService.favouritesIdRecords;
@@ -36,6 +37,12 @@ export class FavouritesComponent {
         })
       })
   }
+
+  /**
+   * 
+   * @param id takes the input id to match through and delete from favourites array
+   */
+  //removes the id from favourites user services array
   removeFromFav(id: string) {
     this.getFavService.removeFavourites(id);
     this.favIds = this.getFavService.favouritesIdRecords;

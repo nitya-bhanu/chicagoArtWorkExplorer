@@ -3,7 +3,6 @@ import { Input } from '@angular/core';
 import { GetFullArtworkByIdResponse } from 'src/shared/models/Artwork';
 import { GetDataService } from 'src/shared/services/artWork.service';
 import { FavDataServicesService } from 'src/shared/services/fav-data.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -27,6 +26,10 @@ export class CardComponent implements OnInit {
       this.updateData(this.FetchedItems);
   }
 
+  /**
+   * 
+   * @param items takes up the information of item to be saved to 
+   */
   // some other function that uses the FetchedItems input
   updateData(items) {
     console.log(items);
@@ -47,7 +50,12 @@ export class CardComponent implements OnInit {
     })
   }
 
-  fillHeart(id){
+  /**
+   * 
+   * @param id to be passed as a string, icon id of the card to be filled
+   */
+  //changes the heart from unfilled to filled
+  fillHeart(id:string){
     console.log('working');
     const x=document.getElementById(`${id}-hrt-icon`);
     console.log('here: ',x);
@@ -55,25 +63,12 @@ export class CardComponent implements OnInit {
     this.favDataService.addFavourites(id);
   }
 
+  /**
+   * 
+   * @param id takes up the id in string format, of the data whose info needs to be removed from favourites
+   */
+  //removes the item from favourite
   removeFromFav(id: string): void {
     this.removeClicked.emit(id);
   }
-
-    // FetchItem:GetFullArtworkByIdResponse['data'];
-  // constructor(private getServices:GetDataService){}
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   this.getServices.getArtworkDetailsById(changes['FetchedItems'].currentValue.api_link).subscribe({
-  //     next: (resp:GetFullArtworkByIdResponse ) => {
-  //       this.FetchItem = resp.data;
-  //     },
-  //     error: (err) => {
-  //       console.log(err);
-  //     },
-  //     complete: () => {
-  //       console.log('Searched Results Fetched');
-  //     }
-  //   });;
-  //   throw new Error('Method not implemented.');
-  // }
-
 }

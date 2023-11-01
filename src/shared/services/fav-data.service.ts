@@ -6,12 +6,17 @@ import { Injectable } from '@angular/core';
 export class FavDataServicesService {
   favouritesIdRecords: Array<string>;
   constructor() {
-    let p = sessionStorage.getItem("favIds");
+    const p = sessionStorage.getItem("favIds");
     if (p) {
       this.favouritesIdRecords = JSON.parse(p);
-    };
+    }
   }
-  addFavourites(id: any) {
+  /**
+   * 
+   * @param id artwork ID to be passed a string
+   */
+  //adds the artwork's id to the favourite array
+  addFavourites(id: string) {
     let x: string[] = [];
     const favIds = sessionStorage.getItem("favIds");
     if (favIds) {
@@ -22,7 +27,13 @@ export class FavDataServicesService {
     sessionStorage.setItem("favIds", JSON.stringify(x));
     console.log(x);
   }
-  removeFavourites(id: any) {
+
+  /**
+   * 
+   * @param id takes up the id of artwork to be rmeoved
+   */
+  //removes the artwork id from favourites array that is no longer needed
+  removeFavourites(id: string) {
     let x: string[] = [];
     const favIds = sessionStorage.getItem("favIds");
     if (favIds) {
